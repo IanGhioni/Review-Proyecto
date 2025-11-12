@@ -9,7 +9,6 @@ export async function POST(req) {
         const review = await ReviewSchema.create(data);
         return NextResponse.json(review, { status: 201 });
     } catch (err) {
-        console.error(err);
         return NextResponse.json({ error: 'Error creando review' }, { status: 500 });
     }
 }
