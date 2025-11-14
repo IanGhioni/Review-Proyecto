@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import ReviewCard from "@/components/ReviewCard";
 import { useRouter } from 'next/navigation';
 import "./homePageStyle.css"
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Home() {
   const [reviews, setReviews] = useState([]);
@@ -47,6 +48,13 @@ export default function Home() {
   return (
     <div className="container-home-page">
       <Navbar/>
+      {cargando ? 
+        <div className="flex flex-row justify-center items-center size-full gap-3">
+          <CircularProgress color="inherit"/>
+          Cargando
+        </div>
+      :
+      <div>
       <div className="text-title">
         Bienvenido a mi blog personal, donde subo reviews y algun dia escriba cositas :P
       </div>
@@ -108,6 +116,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </div>
+      }
     </div>
 
   );
