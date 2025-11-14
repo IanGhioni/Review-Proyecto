@@ -30,18 +30,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 10px;
-    padding-right: 10px;
     height: 100%;
     width: 150px;
-    text-align: center;
 }
 
 .button-navegar {
-    padding: 15%;
+    padding: 10%;
+    padding-left: 18%;
+    padding-right: 18%;
     transition: 500ms;
     color: aliceblue;
     border-radius: 20px;
+    min-height: fit-content;
 }
 
 .button-navegar:hover {
