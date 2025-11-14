@@ -61,6 +61,7 @@ export default function Home() {
                 <div className="no-reviews">
                 <div className="filter-container">
                     <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
+                    <button className={`buttonFilter ${categoria === "Videojuego" ? "active" : ""}`} onClick={() => seleccionarCategoria("Videojuego")}>Videojuego</button>
                     <button className={`buttonFilter ${categoria === "Película" ? "active" : ""}`} onClick={() => seleccionarCategoria("Película")}>Película</button>
                     <button className={`buttonFilter ${categoria === "Serie" ? "active" : ""}`} onClick={() => seleccionarCategoria("Serie")}>Serie</button>
                     <button className={`buttonFilter ${categoria === "Libro" ? "active" : ""}`} onClick={() => seleccionarCategoria("Libro")}>Libro</button>
@@ -77,6 +78,7 @@ export default function Home() {
                 <div className="filter-card-container">
                 <div className="filter-container">
                     <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
+                    <button className={`buttonFilter ${categoria === "Videojuego" ? "active" : ""}`} onClick={() => seleccionarCategoria("Videojuego")}>Videojuego</button>
                     <button className={`buttonFilter ${categoria === "Película" ? "active" : ""}`} onClick={() => seleccionarCategoria("Película")}>Película</button>
                     <button className={`buttonFilter ${categoria === "Serie" ? "active" : ""}`} onClick={() => seleccionarCategoria("Serie")}>Serie</button>
                     <button className={`buttonFilter ${categoria === "Libro" ? "active" : ""}`} onClick={() => seleccionarCategoria("Libro")}>Libro</button>

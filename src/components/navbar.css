@@ -10,14 +10,6 @@
     z-index: 100;
 }
 
-.p-divider.p-divider-vertical {
-    width: 2px;
-    min-width: 2px !important;
-    border-radius: 100%;
-    border-color: rgb(255, 255, 255,0.4);
-    border-width: 1px;
-}
-
 .container-botones {
     display: flex;
     height: 100%;
@@ -42,6 +34,18 @@
     color: aliceblue;
     border-radius: 20px;
     min-height: fit-content;
+}
+
+.img-logo {
+    margin-left: 2%;
+    transition: 300ms;
+}
+
+.img-logo:hover {
+    cursor: pointer;
+    background: transparent;
+    transform: scale(125%);
+    transition: 300ms;
 }
 
 .button-navegar:hover {

@@ -86,7 +86,7 @@
 .p-divider.p-divider-vertical {
     width: 2px;
     min-width: 2px !important;
-    min-height: 50vh;
+    min-height: 75vh;
     margin: 1px;
     border-radius: 100%;
 }
