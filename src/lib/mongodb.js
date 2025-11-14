@@ -7,9 +7,7 @@ if (!MONGODB_URI) {
     throw new Error('Please define the MONGODB_URI environment variable');
 }
 
-/** 
- * Cached connection for MongoDB.
- */
+
 let cached = global.mongoose;
 
 if (!cached) {
@@ -22,7 +20,10 @@ async function dbConnect() {
     }
 
     if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }).then((mongoose) => {
             return mongoose;
         });
     }

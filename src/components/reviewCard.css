@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    background-color: black;
+    border-radius: 10px;
+    width: 1300px;
+    margin-bottom: 1%;
+    border-color: aliceblue;
+    border-width: 1px;
+}
+
+.title {
+    font-size: x-large;
+    padding-top: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: aliceblue;
+}
+
+.text {
+    color: aliceblue;
+    margin-bottom: 1%;
+}
+
+.img {
+    margin: 12px;
+    border-radius: 10px;
+    height: 160px;
+    align-self: center;
+    margin-right: 1%;
+}
+
+.p-rating{
+    color: rgb(206, 29, 29);
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.star-container{
+    display: flex;
+    align-items: center;
+}
+
+.category {
+    font-style: italic;
+    color: aliceblue;
+    padding-right: 10px;
+}

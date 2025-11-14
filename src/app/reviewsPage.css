@@ -1,0 +1,96 @@
+.cargandoContainer {
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: xx-large;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+.color-circular {
+    justify-content: center;
+    margin-right: 1%;
+    color: brown;
+    display: flex;
+    align-self: center;
+}
+
+.no-reviews {
+    color: aliceblue;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    min-height: 100vh
+}
+
+.titulo-reviews {
+    color: aliceblue;
+    font-size: 3rem;
+    font-family: serif;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.filter-card-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.buttonFilter {
+    background-color: aliceblue;
+    border-radius: 10px;
+    width: 8rem;
+    font-size: large;
+    margin: 10px;
+    margin-right: 0px;
+    height:2.3rem;
+    transition: 500ms;
+}
+
+.buttonFilter:hover {
+    transform: scale(110%);
+    transition: 500ms;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 5px brown;
+}
+
+.buttonFilter:active {
+    background-color: brown;
+    color: white;
+    transition: 500ms;
+    box-shadow: 0px 0px 5px 5px rgb(255, 255, 255);
+}
+
+.p-divider.p-divider-vertical {
+    width: 2px;
+    min-width: 2px !important;
+    min-height: 80vh;
+    margin: 10px;
+    border-radius: 100%;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+}
+
+.p-divider.p-divider-vertical:before {
+    border-left: 2px solid rgb(255, 255, 255) !important;
+}

@@ -22,7 +22,6 @@ export default function NewReviewPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const res = await fetch('/api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
