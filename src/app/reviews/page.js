@@ -14,16 +14,18 @@ export default function Home() {
     const [totalRecords, setTotalRecords] = useState(0);
     const [cargando, setCargando] = useState(true)
     const [page, setPage] = useState(0);
-    const [rows, setRows] = useState(10); 
+    const [rows, setRows] = useState(10);
+    const [categoria, setCategoria] = useState(""); 
+
 
     useEffect(() => {
         fetchReviews();
         setCargando(false)
-    }, [page, rows]);
+    }, [page, rows, categoria]);
 
     const fetchReviews = async () => {
         setCargando(true)
-        const res = await fetch(`/api/reviews?page=${page + 1}&limit=${rows}`);
+        const res = await fetch(`/api/reviews?page=${page + 1}&limit=${rows}&category=${categoria}`);
         const data = await res.json();
         await setReviews(Array.isArray(data.data) ? data.data : []);
         setTotalRecords(data.pagination?.total || 0);
@@ -32,6 +34,11 @@ export default function Home() {
     const onPageChange = (e) => {
         setPage(e.page);
         setRows(e.rows);
+    };
+
+    const seleccionarCategoria = (cat) => {
+        setCategoria(cat);
+        setPage(0);
     };
 
     const emoji = "(⁠.⁠ ⁠❛⁠ ⁠ᴗ⁠ ⁠❛⁠.⁠)"
@@ -49,21 +56,33 @@ export default function Home() {
             :
             <div>
             {reviews.length == 0 ? 
-            <div className="no-reviews">
-                No hay reviews para mostrar. 
+            <div className="page-container">
+                <div className="w-370 titulo-reviews">{emoji} Mis reviews</div>
+                <div className="no-reviews">
+                <div className="filter-container">
+                    <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
+                    <button className={`buttonFilter ${categoria === "Película" ? "active" : ""}`} onClick={() => seleccionarCategoria("Película")}>Película</button>
+                    <button className={`buttonFilter ${categoria === "Serie" ? "active" : ""}`} onClick={() => seleccionarCategoria("Serie")}>Serie</button>
+                    <button className={`buttonFilter ${categoria === "Libro" ? "active" : ""}`} onClick={() => seleccionarCategoria("Libro")}>Libro</button>
+                    <button className={`buttonFilter ${categoria === "Manga" ? "active" : ""}`} onClick={() => seleccionarCategoria("Manga")}>Manga</button>
+                    <button className={`buttonFilter ${categoria === "Comic" ? "active" : ""}`} onClick={() => seleccionarCategoria("Comic")}>Comic</button>
+                    <button className={`buttonFilter ${categoria === "Álbum" ? "active" : ""}`} onClick={() => seleccionarCategoria("Álbum")}>Musica</button>
+                </div>
+                <div className="no-reviews-text">Opa! No hay reviews para mostrar.</div> 
+            </div>
             </div>
             :
             <div className="page-container">
                 <div className="w-370 titulo-reviews">{emoji} Mis reviews</div>
                 <div className="filter-card-container">
                 <div className="filter-container">
-                    <button className="buttonFilter">Todos</button>
-                    <button className="buttonFilter">Película</button>
-                    <button className="buttonFilter">Serie</button>
-                    <button className="buttonFilter">Libro</button>
-                    <button className="buttonFilter">Manga</button>
-                    <button className="buttonFilter">Comic</button>
-                    <button className="buttonFilter">Musica</button>
+                    <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
+                    <button className={`buttonFilter ${categoria === "Película" ? "active" : ""}`} onClick={() => seleccionarCategoria("Película")}>Película</button>
+                    <button className={`buttonFilter ${categoria === "Serie" ? "active" : ""}`} onClick={() => seleccionarCategoria("Serie")}>Serie</button>
+                    <button className={`buttonFilter ${categoria === "Libro" ? "active" : ""}`} onClick={() => seleccionarCategoria("Libro")}>Libro</button>
+                    <button className={`buttonFilter ${categoria === "Manga" ? "active" : ""}`} onClick={() => seleccionarCategoria("Manga")}>Manga</button>
+                    <button className={`buttonFilter ${categoria === "Comic" ? "active" : ""}`} onClick={() => seleccionarCategoria("Comic")}>Comic</button>
+                    <button className={`buttonFilter ${categoria === "Álbum" ? "active" : ""}`} onClick={() => seleccionarCategoria("Álbum")}>Musica</button>
                 </div>
                 <Divider layout="vertical"/>
                 <ul className="space-y-4">

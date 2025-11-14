@@ -20,16 +20,22 @@
     font-size: xx-large;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-items: center;
+    width: 83.6%;
+}
 
+.no-reviews-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    align-self: center;
+    padding-left: 4%;
 }
 
 .page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 10vh;
     margin-top: 85px;
 }
 
@@ -42,13 +48,14 @@
 
 .filter-card-container {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .filter-container {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    color: black;
 }
 
 .buttonFilter {
@@ -69,7 +76,7 @@
     box-shadow: 0px 0px 5px 5px brown;
 }
 
-.buttonFilter:active {
+.buttonFilter.active {
     background-color: brown;
     color: white;
     transition: 500ms;
@@ -79,13 +86,11 @@
 .p-divider.p-divider-vertical {
     width: 2px;
     min-width: 2px !important;
-    min-height: 80vh;
-    margin: 10px;
+    min-height: 50vh;
+    margin: 1px;
     border-radius: 100%;
-    border-color: rgb(255, 255, 255);
-    border-width: 1px;
 }
 
 .p-divider.p-divider-vertical:before {
-    border-left: 2px solid rgb(255, 255, 255) !important;
+    border-left: solid rgb(255, 255, 255) !important;
 }
