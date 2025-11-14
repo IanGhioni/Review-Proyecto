@@ -7,6 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import ReviewCard from "@/components/ReviewCard";
 import "./paginator.css"
 import "./reviewsPage.css"
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
     const [reviews, setReviews] = useState([]);
@@ -33,8 +34,11 @@ export default function Home() {
         setRows(e.rows);
     };
 
+    const emoji = "(⁠.⁠ ⁠❛⁠ ⁠ᴗ⁠ ⁠❛⁠.⁠)"
+
     return (
         <div>
+            <Navbar/>
         {cargando ? 
             <div className="cargandoContainer"> 
             <div className="color-circular">
@@ -50,7 +54,7 @@ export default function Home() {
             </div>
             :
             <div className="page-container">
-                <div className="w-370 titulo-reviews">✨Mis reviews</div>
+                <div className="w-370 titulo-reviews">{emoji} Mis reviews</div>
                 <div className="filter-card-container">
                 <div className="filter-container">
                     <button className="buttonFilter">Todos</button>
@@ -61,7 +65,7 @@ export default function Home() {
                     <button className="buttonFilter">Comic</button>
                     <button className="buttonFilter">Musica</button>
                 </div>
-                <Divider layout="vertical" />
+                <Divider layout="vertical"/>
                 <ul className="space-y-4">
                     {reviews.map((review) => (
                     <li key={review._id}>
@@ -70,7 +74,6 @@ export default function Home() {
                     ))}
                 </ul>
                 </div>
-
                 <Paginator
                 first={page * rows}
                 rows={rows}
