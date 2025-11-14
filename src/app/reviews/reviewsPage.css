@@ -59,7 +59,7 @@
 }
 
 .buttonFilter {
-    background-color: aliceblue;
+    background-image: url('../../assets/button-background.png');
     border-radius: 10px;
     width: 8rem;
     font-size: large;
@@ -70,13 +70,14 @@
 }
 
 .buttonFilter:hover {
-    transform: scale(110%);
-    transition: 500ms;
+    transform: scale(115%);
+    transition: 400ms;
     cursor: pointer;
     box-shadow: 0px 0px 5px 5px brown;
 }
 
 .buttonFilter.active {
+    background-image: none;
     background-color: brown;
     color: white;
     transition: 500ms;
