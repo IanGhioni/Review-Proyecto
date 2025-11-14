@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import "./background-blur.css"
 
 export default function NewReviewPage() {
     const [form, setForm] = useState({
@@ -38,7 +37,7 @@ export default function NewReviewPage() {
     };
 
     return (
-        <div className='background-blur'>
+        <div>
         <div className="flex flex-col items-center justify-center min-h-screen p-6">
         <h1 className="text-2xl font-bold mb-6">Crear nueva review</h1>
 
