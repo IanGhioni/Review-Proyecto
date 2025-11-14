@@ -1,6 +1,7 @@
 .container {
     display: flex;
-    background-color: black;
+    background-image: url('../assets/review-card-background.jpg');
+    background-size: 100% 300%;
     border-radius: 10px;
     max-width: 1300px;
     margin-bottom: 1%;

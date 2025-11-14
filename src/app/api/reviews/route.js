@@ -10,13 +10,16 @@ export async function GET(req) {
     const page = parseInt(searchParams.get("page")) || 1;
     const limit = parseInt(searchParams.get("limit")) || 5;
     const category = searchParams.get("category") || "";
-
+    const favoritesOnly = searchParams.get("favorites") === "true";
 
     try {
         const query = {}
 
         if (category && category !== "") {
             query.category = category;
+        }    
+        if (favoritesOnly) {
+            query.favorite = true;
         }
 
         const skip = (page - 1) * limit;
