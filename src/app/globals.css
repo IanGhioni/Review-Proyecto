@@ -6,7 +6,6 @@
     background-image: url('../assets/background-img.png');
   }
 
-  /* Capa de blur transparente */
   body::before {
     content: "";
     position: fixed;
