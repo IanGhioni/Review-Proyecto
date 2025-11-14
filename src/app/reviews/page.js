@@ -89,13 +89,15 @@ export default function Home() {
                     <button className={`buttonFilter ${categoria === "Álbum" ? "active" : ""}`} onClick={() => seleccionarCategoria("Álbum")}>Musica</button>
                 </div>
                 <Divider layout="vertical"/>
-                <ul className="space-y-4">
-                    {reviews.map((review) => (
-                    <li key={review._id}>
-                        <ReviewCard review={review} />
-                    </li>
-                    ))}
-                </ul>
+                <div className="container-cards">
+                    <ul>
+                        {reviews.map((review) => (
+                        <li key={review._id}>
+                            <ReviewCard review={review} />
+                        </li>
+                        ))}
+                    </ul>
+                </div>
                 </div>
                 <Paginator
                 first={page * rows}

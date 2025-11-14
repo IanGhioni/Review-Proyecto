@@ -39,6 +39,10 @@
     margin-top: 85px;
 }
 
+.container-cards {
+    min-width: 1300px;
+}
+
 .titulo-reviews {
     color: aliceblue;
     font-size: 3rem;
@@ -87,7 +91,7 @@
 .p-divider.p-divider-vertical {
     width: 2px;
     min-width: 2px !important;
-    min-height: 75vh;
+    min-height: 70vh;
     margin: 1px;
     border-radius: 100%;
 }
