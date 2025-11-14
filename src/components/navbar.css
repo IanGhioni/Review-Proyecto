@@ -27,10 +27,11 @@
 }
 
 .button-navegar {
+    background-image: none;
     padding: 10%;
     padding-left: 18%;
     padding-right: 18%;
-    transition: 500ms;
+    transition: 100ms;
     color: aliceblue;
     border-radius: 20px;
     min-height: fit-content;
@@ -49,8 +50,8 @@
 }
 
 .button-navegar:hover {
-    background-color: rgb(165, 42, 42, 0.9);
+    background-image: url('../assets/background-boton-navbar.png');
     box-shadow: 0px 0px 15px 1px  rgb(255, 255, 255);
-    transition: 500ms;
+    transition: 100ms;
     cursor: pointer;
 }

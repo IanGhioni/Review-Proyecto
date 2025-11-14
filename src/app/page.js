@@ -6,6 +6,10 @@ import "./homePageStyle.css"
 
 export default function Home() {
 
+  useEffect(() => {
+    document.title = 'Pagina principal';
+  }, [])
+
   return (
     <div className="container">
       <Navbar/>

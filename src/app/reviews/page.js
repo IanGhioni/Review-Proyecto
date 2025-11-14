@@ -9,6 +9,7 @@ import "./paginator.css"
 import "./reviewsPage.css"
 import Navbar from "@/components/Navbar";
 
+
 export default function Home() {
     const [reviews, setReviews] = useState([]);
     const [totalRecords, setTotalRecords] = useState(0);
@@ -19,6 +20,7 @@ export default function Home() {
 
 
     useEffect(() => {
+        document.title = 'Mis reviews';
         fetchReviews();
         setCargando(false)
     }, [page, rows, categoria]);
