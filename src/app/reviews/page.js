@@ -22,7 +22,6 @@ export default function Home() {
     useEffect(() => {
         document.title = 'Mis reviews';
         fetchReviews();
-        setCargando(false)
     }, [page, rows, categoria]);
 
     const fetchReviews = async () => {
@@ -31,6 +30,7 @@ export default function Home() {
         const data = await res.json();
         await setReviews(Array.isArray(data.data) ? data.data : []);
         setTotalRecords(data.pagination?.total || 0);
+        setCargando(false)
     };
 
     const onPageChange = (e) => {
