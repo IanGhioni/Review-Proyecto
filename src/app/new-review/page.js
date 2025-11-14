@@ -37,6 +37,7 @@ export default function NewReviewPage() {
     };
 
     return (
+        <div>
         <div className="flex flex-col items-center justify-center min-h-screen p-6">
         <h1 className="text-2xl font-bold mb-6">Crear nueva review</h1>
 
@@ -107,6 +108,7 @@ export default function NewReviewPage() {
         </form>
 
         {msg && <p className="mt-4">{msg}</p>}
+        </div>
         </div>
     );
 }
