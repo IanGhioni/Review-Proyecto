@@ -1,0 +1,15 @@
+input, form, textarea {
+    border-color: rgb(218, 220, 223);
+    outline: none; outline: none; 
+}
+
+input:hover, form:hover, textarea:hover {
+    border-color: rgb(106, 159, 240);
+    transition: 100ms;
+}
+
+input:focus, textarea:focus {
+    border-color: rgb(66, 133, 244);
+    box-shadow: 0 0 0px 3px rgba(85, 144, 238, 0.267); /* glow azul */
+    transition: 100ms;
+}

@@ -9,6 +9,7 @@
     gap: 0.5rem;
     font-size: large;
     padding-bottom: 1rem;
+    background-color: rgb(0, 0, 0, 0);
 }
 
 .p-paginator .p-disabled {

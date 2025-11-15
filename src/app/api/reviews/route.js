@@ -51,6 +51,8 @@ export async function POST(req) {
         await dbConnect();
 
         const data = await req.json();
+        console.log("POST DATA:", data);
+        
         const review = await ReviewSchema.create(data);
 
         return NextResponse.json({ success: true, data: review });

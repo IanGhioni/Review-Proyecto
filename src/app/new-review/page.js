@@ -1,6 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { InputSwitch } from 'primereact/inputswitch';
+import { Dropdown } from 'primereact/dropdown';
+import { Rating } from '@mui/material';
+import "@/app/new-review/review-form.css"
+import Navbar from '@/components/Navbar';
 
 export default function NewReviewPage() {
     const [form, setForm] = useState({
@@ -9,16 +14,21 @@ export default function NewReviewPage() {
         imageUrl: '',
         stars: 1,
         category: '',
+        favorite: false
     });
     const [msg, setMsg] = useState('');
+    const categorias = ['Película', 'Videojuego', 'Serie', 'Libro', 'Manga', 'Comic', 'Álbum']
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setForm((prev) => ({
-        ...prev,
-        [name]: name === 'stars' ? Number(value) : value,
+        console.log(name)
+        console.log(value)
+        setForm(prev => ({
+            ...prev,
+            [name]: name === 'stars' ? Number(value) : value
         }));
     };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,17 +39,18 @@ export default function NewReviewPage() {
         });
 
         if (res.ok) {
-        setMsg('✅ Review creada correctamente');
-        setForm({ title: '', text: '', imageUrl: '', stars: 1, category: '' });
+        setMsg('Review creada correctamente');
+        setForm({ title: '', text: '', imageUrl: '', stars: 1, category: '', favorite: false });
         } else {
-        setMsg('❌ Error al crear review');
+        setMsg('Error al crear review');
         }
     };
 
     return (
         <div>
+        <Navbar/>
         <div className="flex flex-col items-center justify-center min-h-screen p-6">
-        <h1 className="text-2xl font-bold mb-6">Crear nueva review</h1>
+        <h1 className="text-2xl font-bold mb-6" style={{color: 'white'}}>Crear nueva review</h1>
 
         <form
             onSubmit={handleSubmit}
@@ -78,27 +89,36 @@ export default function NewReviewPage() {
             <label htmlFor="stars" className="font-medium">
                 Estrellas:
             </label>
-            <input
-                type="number"
-                id="stars"
-                name="stars"
-                min="1"
-                max="5"
-                value={form.stars}
-                onChange={handleChange}
-                className="border p-2 rounded w-16 text-center"
+            <Rating name="stars" 
+                    value={form.stars} 
+                    onChange={handleChange} 
+                    precision={0.5}
+                    style={{color: 'red'}}
             />
             </div>
-
-            <input
-            type="text"
-            name="category"
-            placeholder="Categoría (libro, película, álbum, etc.)"
-            value={form.category}
-            onChange={handleChange}
-            className="border p-2 rounded"
+            <Dropdown name='category' 
+                    value={form.category} 
+                    onChange={handleChange} 
+                    options={categorias} 
+                    optionLabel="category" 
+                    placeholder="Categoria" 
             />
+            <div className='flex flex-column gap-2 align-center'>
+            
+            <input type="checkbox" 
+                name="favorite" 
+                value={form.favorite} 
+                onChange={(e) => {
+                    setForm(prev => ({
+                        ...prev,
+                        favorite: e.target.checked
+                    }));
+                }}
+            />
+            <label>¿Favorito?</label>
 
+            
+            </div>
             <button
             type="submit"
             className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
@@ -107,7 +127,7 @@ export default function NewReviewPage() {
             </button>
         </form>
 
-        {msg && <p className="mt-4">{msg}</p>}
+        {msg && <p className="mt-4" style={{color: 'white'}}>{msg}</p>}
         </div>
         </div>
     );
