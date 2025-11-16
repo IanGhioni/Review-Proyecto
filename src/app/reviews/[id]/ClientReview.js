@@ -17,7 +17,6 @@ export default function ClientReview({ review }) {
 
     if (review.otherImages) {
         const array = review.otherImages.trim().split(/\s+/);
-        console.log(array)
     }
 
     return (

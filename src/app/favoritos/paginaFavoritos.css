@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.imgen-fav {
+.imagen-fav-prueba {
     width: 200px;
     border-radius: 5px;
     align-self: center;
@@ -43,9 +43,8 @@
 }
 
 
-img:hover {
+.imagen-fav-prueba:hover {
     transform: scale(102%);
-    margin-bottom: 2%;
     box-shadow: 0px 0px 5px 3px rgb(216, 7, 7);
     cursor: pointer;
 }
