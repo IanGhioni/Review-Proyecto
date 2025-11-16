@@ -46,7 +46,7 @@ export default function PaginaDeFavs() {
                         {reviews.map((r) => (
                             <div key={r._id} className="flex items-center justify-center">
                             <div key={r._id} className="container-individual-card">
-                                <img className="imgen-fav" src={r.imageUrl}
+                                <img className="imagen-fav-prueba" src={r.imageUrl}
                                     onClick={() => router.push(`/reviews/${r._id}`)}
                                 />
                                 <p className="texto-titulo" onClick={() => router.push(`/reviews/${r._id}`)}>{r.title}</p>
