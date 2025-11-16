@@ -25,8 +25,8 @@ export default function Home() {
     const fetchReviews = async () => {
         setCargando(true)
         const res = await fetch(`/api/reviews?page=1&limit=3&category=`);
-        const resPelisFav = (await fetch('/api/reviews?favorites=true&limit=3&category=Película'));
-        const resJuegosFav = (await fetch('/api/reviews?favorites=true&limit=3&category=Videojuego'));
+        const resPelisFav = (await fetch('/api/reviews?favorites=true&limit=4&category=Película'));
+        const resJuegosFav = (await fetch('/api/reviews?favorites=true&limit=4&category=Videojuego'));
         const resAlbumesFav = (await fetch('/api/reviews?favorites=true&limit=3&category=Álbum'));
 
 
@@ -96,7 +96,7 @@ export default function Home() {
               </div>
             </ul>
           </div>
-          <div className="boton-favs">Ver todos mis favs</div>
+          <div className="boton-favs" onClick={() => router.push('/favoritos')} >Ver todos mis favs</div>
         </div>
         <div className="right-side-container">
           <div>
