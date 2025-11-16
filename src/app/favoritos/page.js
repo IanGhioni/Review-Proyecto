@@ -49,7 +49,7 @@ export default function PaginaDeFavs() {
                                 <img className="imgen-fav" src={r.imageUrl}
                                     onClick={() => router.push(`/reviews/${r._id}`)}
                                 />
-                                <p className="texto-titulo">{r.title}</p>
+                                <p className="texto-titulo" onClick={() => router.push(`/reviews/${r._id}`)}>{r.title}</p>
                                 <Rating 
                                     value={r.stars} 
                                     precision={0.5}

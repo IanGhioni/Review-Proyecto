@@ -27,6 +27,11 @@
     margin-top: 1%;
 }
 
+.texto-titulo:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .container-individual-card {
     display: flex;
     flex-direction: column;
@@ -37,12 +42,10 @@
     transition: 200ms;
 }
 
-.container-individual-card:hover {
-    transition: 200ms;
-    transform: scale(105%);
-    cursor: pointer;
-}
 
-.container-individual-card:hover img {
+img:hover {
+    transform: scale(102%);
+    margin-bottom: 2%;
     box-shadow: 0px 0px 5px 3px rgb(216, 7, 7);
+    cursor: pointer;
 }
