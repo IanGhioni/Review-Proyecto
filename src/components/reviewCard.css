@@ -4,11 +4,12 @@
     background-size: 100% 300%;
     border-radius: 10px;
     max-width: 1300px;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     border-color: aliceblue;
     border-width: 1px;
     transition: 200ms;
     max-height: 13rem;
+    padding-right: 2%;
 }
 
 .container:hover {
