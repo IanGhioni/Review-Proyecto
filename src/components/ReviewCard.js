@@ -11,7 +11,8 @@ const ReviewCard = ({review}) => {
         <div className="container" onClick={() => router.push(`/reviews/${review._id}`)}>
             <img className="img"
                 src={review.imageUrl} 
-                alt={review.title} 
+                alt={review.title}
+                loading="lazy"
             />
             <div>
                 <div className="title">{review.title}</div>

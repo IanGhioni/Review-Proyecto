@@ -66,7 +66,7 @@ export default function Home() {
               <div className="favorites-container">
               {pelisFav.map((peli) => (
                 <li key={peli._id}>
-                  <img className="img-fav"src={peli.imageUrl} alt={peli.title} onClick={() => router.push(`/reviews/${peli._id}`)}/>
+                  <img className="img-fav"src={peli.imageUrl} alt={peli.title} onClick={() => router.push(`/reviews/${peli._id}`)} loading="lazy"/>
                 </li>
               ))}
               </div>
@@ -78,7 +78,7 @@ export default function Home() {
               <div className="favorites-container">
               {albumesFav.map((album) => (
                 <li key={album._id}>
-                  <img className="img-fav"src={album.imageUrl} alt={album.title} onClick={() => router.push(`/reviews/${album._id}`)}/>
+                  <img className="img-fav"src={album.imageUrl} alt={album.title} onClick={() => router.push(`/reviews/${album._id}`)} loading="lazy"/>
                 </li>
               ))}
               </div>
@@ -90,7 +90,7 @@ export default function Home() {
               <div className="favorites-container">
               {juegosFav.map((juego) => (
                 <li key={juego._id}>
-                  <img className="img-fav" src={juego.imageUrl} alt={juego.title} onClick={() => router.push(`/reviews/${juego._id}`)}/>
+                  <img className="img-fav" src={juego.imageUrl} alt={juego.title} onClick={() => router.push(`/reviews/${juego._id}`)} loading="lazy"/>
                 </li>
               ))}
               </div>

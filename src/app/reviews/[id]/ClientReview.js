@@ -30,6 +30,7 @@ export default function ClientReview({ review }) {
                         setFullImagen(review.imageUrl); 
                         setOpen(true)
                     }}
+                    loading="lazy"
                     ></img>
                     <Divider layout="vertical"/>
                     <div>
