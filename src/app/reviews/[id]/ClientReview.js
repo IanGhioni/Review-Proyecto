@@ -8,6 +8,7 @@ import { Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Divider } from "primereact/divider";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 export default function ClientReview({ review }) {
@@ -40,8 +41,9 @@ export default function ClientReview({ review }) {
                             readOnly/>
                         </div>
                         {review.favorite ? (
-                            <div>
-                                <p>Favorito</p>
+                            <div className="flex flex-row item-center gap-2 italic">
+                                <Rating max={1}value={1} icon={<FavoriteIcon fontSize="inherit" />} readOnly style={{color: 'red'}}/>
+                                De mis favs jiji
                             </div>
                         ) : (
                             <></>
