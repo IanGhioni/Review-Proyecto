@@ -1,65 +1,124 @@
-import Image from "next/image";
+'use client';
+
+import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import ReviewCard from "@/components/ReviewCard";
+import { useRouter } from 'next/navigation';
+import "./homePageStyle.css"
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Home() {
+  const [reviews, setReviews] = useState([]);
+  const [pelisFav, setPelisFav] = useState([])
+  const [juegosFav, setJuegosFav] = useState([])
+  const [albumesFav, setAlbumesFav] = useState([])
+  const [blog, setBlog] = useState([])
+  const [cargando, setCargando] = useState(true)
+
+  const router = useRouter();
+
+  useEffect(() => {
+      document.title = 'Pagina principal';
+      fetchReviews();
+    }, []);
+
+    const fetchReviews = async () => {
+        setCargando(true)
+        const res = await fetch(`/api/reviews?page=1&limit=3&category=`);
+        const resPelisFav = (await fetch('/api/reviews?favorites=true&limit=3&category=Película'));
+        const resJuegosFav = (await fetch('/api/reviews?favorites=true&limit=3&category=Videojuego'));
+        const resAlbumesFav = (await fetch('/api/reviews?favorites=true&limit=3&category=Álbum'));
+
+
+        
+        const data = await res.json();
+        const pelisFav = await resPelisFav.json()
+        const juegosFav = await resJuegosFav.json()
+        const albumesFav = await resAlbumesFav.json()
+      
+        await setReviews(Array.isArray(data.data) ? data.data : []);
+        await setPelisFav(Array.isArray(pelisFav.data) ? pelisFav.data : [])
+        await setJuegosFav(Array.isArray(juegosFav.data) ? juegosFav.data : [])
+        await setAlbumesFav(Array.isArray(albumesFav.data) ? albumesFav.data : [])
+        setCargando(false)
+    };
+
+
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container-home-page">
+      <Navbar/>
+      {cargando ? 
+        <div className="flex flex-row justify-center items-center size-full gap-3">
+          <CircularProgress color="inherit"/>
+          Cargando
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      :
+      <div>
+      <div className="text-title">
+        Bienvenido a mi blog personal, donde subo reviews y algun dia escriba cositas :P
+      </div>
+      <div className="container-contenido">
+        <div className="left-side-container">
+          <div className="favorito-titulo">
+            ‣ Pelís favoritas:
+            <ul>
+              <div className="favorites-container">
+              {pelisFav.map((peli) => (
+                <li key={peli._id}>
+                  <img className="img-fav"src={peli.imageUrl} alt={peli.title} onClick={() => router.push(`/reviews/${peli._id}`)} loading="lazy"/>
+                </li>
+              ))}
+              </div>
+            </ul>
+          </div>
+          <div className="favorito-titulo">
+            ‣ Álbumes favoritos:
+            <ul>
+              <div className="favorites-container">
+              {albumesFav.map((album) => (
+                <li key={album._id}>
+                  <img className="img-fav"src={album.imageUrl} alt={album.title} onClick={() => router.push(`/reviews/${album._id}`)} loading="lazy"/>
+                </li>
+              ))}
+              </div>
+            </ul>
+          </div>
+          <div className="favorito-titulo">
+            ‣ Videojuegos favoritos:
+            <ul>
+              <div className="favorites-container">
+              {juegosFav.map((juego) => (
+                <li key={juego._id}>
+                  <img className="img-fav" src={juego.imageUrl} alt={juego.title} onClick={() => router.push(`/reviews/${juego._id}`)} loading="lazy"/>
+                </li>
+              ))}
+              </div>
+            </ul>
+          </div>
+          <div className="boton-favs">Ver todos mis favs</div>
         </div>
-      </main>
+        <div className="right-side-container">
+          <div>
+            <div className="right-side-titulo">
+              <div className="titulo-mis-reviews">Mis ultimas reviews:</div>
+              <div className="ver-todas" onClick={() => router.push('/reviews')}>Ver todas</div>
+            </div>
+            <div>
+              <ul className="space-y-4">
+                        {reviews.map((review) => (
+                        <li key={review._id}>
+                            <ReviewCard review={review} />
+                        </li>
+                        ))}
+                    </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      }
     </div>
+
   );
 }

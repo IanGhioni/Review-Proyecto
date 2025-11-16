@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    background-image: url('../assets/review-card-background.jpg');
+    background-size: 100% 300%;
+    border-radius: 10px;
+    max-width: 1300px;
+    margin-bottom: 2%;
+    border-color: aliceblue;
+    border-width: 1px;
+    transition: 200ms;
+    max-height: 13rem;
+    padding-right: 2%;
+}
+
+.container:hover {
+    transform: scale(101%);
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.title {
+    font-size: x-large;
+    padding-top: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: aliceblue;
+}
+
+.text {
+    color: aliceblue;
+    margin-bottom: 1%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.img {
+    margin: 12px;
+    border-radius: 10px;
+    height: 160px;
+    align-self: center;
+    margin-right: 1%;
+}
+
+.p-rating{
+    color: rgb(206, 29, 29);
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.star-container{
+    display: flex;
+    align-items: center;
+}
+
+.category {
+    font-style: italic;
+    color: aliceblue;
+    padding-right: 10px;
+}

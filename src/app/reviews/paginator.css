@@ -1,0 +1,73 @@
+.p-paginator {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: nowrap; 
+    width: max-content;
+    margin: 0 auto;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    font-size: large;
+    padding-bottom: 1rem;
+    background-color: rgb(0, 0, 0, 0);
+}
+
+.p-paginator .p-disabled {
+    display: none !important;
+}
+
+.p-paginator-first, .p-paginator-last {
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    width: 50px;
+    height: 30px;
+    margin: 1%;
+    transition: 300ms;
+}
+
+.p-paginator-first:hover, 
+.p-paginator-last:hover, 
+.p-paginator-prev:hover, 
+.p-paginator-next:hover,
+.p-paginator-page:hover {
+    transform: scale(110%);
+    transition: 300ms;
+    box-shadow: 0px 0px 5px 3px brown;
+    color: brown;
+}
+
+.p-paginator-prev, .p-paginator-next {
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    width: 40px;
+    height: 30px;
+    margin: 1%;
+    transition: 300ms;
+}
+
+.p-paginator-pages {
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+        gap: 0.5rem;
+
+}
+
+.p-paginator-page.p-highlight {
+    background-color: rgb(177, 34, 34);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
+    transform: scale(120%);
+}
+
+.p-paginator-page {
+    transition: 300ms;
+}
+
+.p-paginator-page {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    margin: 1%;
+}

@@ -16,6 +16,8 @@ const ReviewSchema = new mongoose.Schema({
         max: 5,
     },
     category: String,
-}, { timestamps: true }); // agrega createdAt y updatedAt automáticamente
+    favorite: Boolean,
+    otherImages: String,
+}, { timestamps: true });
 
 export default mongoose.models.Review || mongoose.model('Review', ReviewSchema);

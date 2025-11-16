@@ -1,0 +1,88 @@
+.container-home-page {
+    margin-top: 85px;
+    color: aliceblue;
+}
+
+.text-title {
+    font-size: xx-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.right-side-container {
+    width: 40%;
+}
+.left-side-container {
+    width: 40%;
+}
+
+.container-contenido {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img-fav {
+    height: 170px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px brown;
+    margin: 3%;
+    transition: 200ms;
+}
+
+.img-fav:hover, .boton-favs:hover {
+    transform: scale(105%);
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.favorites-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+}
+
+.right-side-titulo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo-mis-reviews {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
+.ver-todas {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: solid;
+    text-decoration-line: underline;
+    align-self: center;
+    transition: 200ms;
+}
+
+.ver-todas:hover {
+    cursor: pointer;
+    transform: scale(110%);
+    transition: 200ms;
+}
+
+.favorito-titulo {
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 2%;
+}
+
+.boton-favs {
+    justify-self: right;
+    width: fit-content;
+    background-image: url('../assets/button-background.png');
+    color: black;
+    border-radius: 15px;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.boton-favs:hover {
+    cursor: pointer;
+}
