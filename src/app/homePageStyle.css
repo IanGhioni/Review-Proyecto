@@ -27,6 +27,13 @@
     border-radius: 10px;
     box-shadow: 0px 0px 5px 2px brown;
     margin: 3%;
+    transition: 200ms;
+}
+
+.img-fav:hover, .boton-favs:hover {
+    transform: scale(105%);
+    transition: 200ms;
+    cursor: pointer;
 }
 
 .favorites-container {

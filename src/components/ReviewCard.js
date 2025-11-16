@@ -1,11 +1,14 @@
 import "./reviewCard.css"
+import { useRouter } from 'next/navigation';
 import { Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const ReviewCard = ({review}) => {
+    const router = useRouter()
+
     return(
-        <div className="container">
+        <div className="container" onClick={() => router.push(`/reviews/${review._id}`)}>
             <img className="img"
                 src={review.imageUrl} 
                 alt={review.title} 

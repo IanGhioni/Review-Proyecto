@@ -7,6 +7,13 @@
     margin-bottom: 1%;
     border-color: aliceblue;
     border-width: 1px;
+    transition: 200ms;
+}
+
+.container:hover {
+    transform: scale(101%);
+    transition: 200ms;
+    cursor: pointer;
 }
 
 .title {
