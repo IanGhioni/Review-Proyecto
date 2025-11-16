@@ -8,6 +8,7 @@
     border-color: aliceblue;
     border-width: 1px;
     transition: 200ms;
+    max-height: 13rem;
 }
 
 .container:hover {
@@ -27,6 +28,11 @@
 .text {
     color: aliceblue;
     margin-bottom: 1%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .img {

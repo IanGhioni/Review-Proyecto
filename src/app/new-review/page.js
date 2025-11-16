@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { InputSwitch } from 'primereact/inputswitch';
 import { Dropdown } from 'primereact/dropdown';
 import { Rating } from '@mui/material';
 import "@/app/new-review/review-form.css"
@@ -14,18 +13,17 @@ export default function NewReviewPage() {
         imageUrl: '',
         stars: 1,
         category: '',
-        favorite: false
+        favorite: false,
+        otherImages: ''
     });
     const [msg, setMsg] = useState('');
     const categorias = ['Película', 'Videojuego', 'Serie', 'Libro', 'Manga', 'Comic', 'Álbum']
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name)
-        console.log(value)
         setForm(prev => ({
             ...prev,
-            [name]: name === 'stars' ? Number(value) : value
+            [name]: name === "stars" ? Number(value) : value
         }));
     };
 
@@ -38,9 +36,11 @@ export default function NewReviewPage() {
         body: JSON.stringify(form),
         });
 
+        console.log(form)
+
         if (res.ok) {
         setMsg('Review creada correctamente');
-        setForm({ title: '', text: '', imageUrl: '', stars: 1, category: '', favorite: false });
+        setForm({ title: '', text: '', imageUrl: '', stars: 1, category: '', favorite: false, otherImages: '' });
         } else {
         setMsg('Error al crear review');
         }
@@ -84,6 +84,15 @@ export default function NewReviewPage() {
             onChange={handleChange}
             className="border p-2 rounded"
             />
+            
+            <textarea
+            name="otherImages"
+            placeholder="Imagenes extra (Separar por espacio)"
+            value={form.otherImages}
+            onChange={handleChange}
+            rows="5"
+            className="border p-2 rounded resize-none"
+            />
 
             <div className="flex items-center gap-2">
             <label htmlFor="stars" className="font-medium">
@@ -91,9 +100,14 @@ export default function NewReviewPage() {
             </label>
             <Rating name="stars" 
                     value={form.stars} 
-                    onChange={handleChange} 
                     precision={0.5}
                     style={{color: 'red'}}
+                    onChange={(event, newValue) => {
+                        setForm(prev => ({
+                            ...prev,
+                            stars: newValue
+                        }));
+                    }}
             />
             </div>
             <Dropdown name='category' 

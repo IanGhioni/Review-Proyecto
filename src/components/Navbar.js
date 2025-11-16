@@ -26,13 +26,17 @@ const Navbar = () => {
                     </button>
                 </div>
                 <div className="container-boton">
-                    <button className="button-navegar">
-                    Mis blogs
-                    </button>    
+
                 </div>
-                <div>Buscador</div>
+                <div style={{color: 'white'}}>Buscador</div>
             </div>
         </div>
     )
 }
 export default Navbar;
+
+/*
+                    <button className="button-navegar">
+                    Mis blogs
+                    </button>  
+*/

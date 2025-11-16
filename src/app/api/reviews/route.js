@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
-import ReviewSchema from '@/model/ReviewSchema';
+import Review from '@/model/ReviewSchema';
 
 
 export async function GET(req) {
@@ -24,12 +24,12 @@ export async function GET(req) {
 
         const skip = (page - 1) * limit;
 
-        const reviews = await ReviewSchema.find(query)
+        const reviews = await Review.find(query)
         .sort({ createdAt: -1 }) 
         .skip(skip)
         .limit(limit);
 
-        const total = await ReviewSchema.countDocuments(query);
+        const total = await Review.countDocuments(query);
 
         return NextResponse.json({
         success: true,
@@ -51,9 +51,8 @@ export async function POST(req) {
         await dbConnect();
 
         const data = await req.json();
-        console.log("POST DATA:", data);
         
-        const review = await ReviewSchema.create(data);
+        const review = await Review.create(data);
 
         return NextResponse.json({ success: true, data: review });
 
