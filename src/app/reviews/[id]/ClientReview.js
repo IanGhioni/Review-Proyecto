@@ -14,8 +14,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 export default function ClientReview({ review }) {
     const [open, setOpen] = useState(false);
     const [fullImagen, setFullImagen] = useState('');
+
     if (review.otherImages) {
         const array = review.otherImages.trim().split(/\s+/);
+        console.log(array)
     }
 
     return (
@@ -53,6 +55,24 @@ export default function ClientReview({ review }) {
                             <></>
                         )}
                         <p className="texto-review">‣ {review.text}</p>
+                        {review.otherImages && (
+                            <div>
+                                <p className='otherImages-div italic underline'>Imagenes:</p>
+                                <div className="otherImages-container">
+                                    {review.otherImages.trim().split(/\s+/).map((imagen) => (
+                                        <img 
+                                            className='otherImages-img' 
+                                            key={imagen} 
+                                            src={imagen}
+                                            onClick={() => { 
+                                                setFullImagen(imagen); 
+                                                setOpen(true)
+                                            }}>
+                                        </img>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                         <FullscreenImage
                             src={fullImagen}
                             open={open}
