@@ -8,7 +8,7 @@
     border-color: aliceblue;
     border-width: 1px;
     transition: 200ms;
-    height: 11.5rem;
+    max-height: 13rem;
 }
 
 .container:hover {
