@@ -17,6 +17,7 @@ const ReviewSchema = new mongoose.Schema({
     },
     category: String,
     favorite: Boolean,
+    otherImages: String,
 }, { timestamps: true });
 
 export default mongoose.models.Review || mongoose.model('Review', ReviewSchema);

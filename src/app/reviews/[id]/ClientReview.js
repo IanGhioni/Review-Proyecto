@@ -14,6 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 export default function ClientReview({ review }) {
     const [open, setOpen] = useState(false);
     const [fullImagen, setFullImagen] = useState('');
+    if (review.otherImages) {
+        const array = review.otherImages.trim().split(/\s+/);
+    }
 
     return (
         <div>
