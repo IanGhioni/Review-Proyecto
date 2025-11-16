@@ -61,7 +61,7 @@ export default function Home() {
       <div className="container-contenido">
         <div className="left-side-container">
           <div className="favorito-titulo">
-            Pelís favoritas:
+            ‣ Pelís favoritas:
             <ul>
               <div className="favorites-container">
               {pelisFav.map((peli) => (
@@ -73,7 +73,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="favorito-titulo">
-            Álbumes favoritos:
+            ‣ Álbumes favoritos:
             <ul>
               <div className="favorites-container">
               {albumesFav.map((album) => (
@@ -85,7 +85,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="favorito-titulo">
-            Videojuegos favoritos:
+            ‣ Videojuegos favoritos:
             <ul>
               <div className="favorites-container">
               {juegosFav.map((juego) => (
