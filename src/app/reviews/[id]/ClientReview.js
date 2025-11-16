@@ -1,0 +1,60 @@
+"use client";
+
+import Navbar from "@/components/Navbar";
+import { useState } from "react";
+import FullscreenImage from "./FullScreenImage";
+import "./singleReviewContainer.css"
+import { Rating } from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { Divider } from "primereact/divider";
+
+
+export default function ClientReview({ review }) {
+    const [open, setOpen] = useState(false);
+    const [fullImagen, setFullImagen] = useState('');
+
+    return (
+        <div>
+            <Navbar />
+            <div className="single-review-page-container">
+                <div className="container-review-contenido">
+                    <img
+                    className="img-review"
+                    src={review.imageUrl}
+                    onClick={() => { 
+                        setFullImagen(review.imageUrl); 
+                        setOpen(true)
+                    }}
+                    ></img>
+                    <Divider layout="vertical"/>
+                    <div>
+                        <h1 className="review-titulo">{review.title}</h1>
+                        <div className="category-star-container">
+                            <p className="review-categoria">{review.category}</p>
+                            <Rating 
+                            value={review.stars} 
+                            precision={0.5} 
+                            icon={<StarIcon fontSize="inherit" style={{ color: "#ff1e00ff" }} />}
+                            emptyIcon={<StarBorderIcon fontSize="inherit" style={{ color: "#bbb" }}/>}
+                            readOnly/>
+                        </div>
+                        {review.favorite ? (
+                            <div>
+                                <p>Favorito</p>
+                            </div>
+                        ) : (
+                            <></>
+                        )}
+                        <p className="texto-review">‣ {review.text}</p>
+                        <FullscreenImage
+                            src={fullImagen}
+                            open={open}
+                            onClose={() => {setOpen(false); setFullImagen('')}}
+                    />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

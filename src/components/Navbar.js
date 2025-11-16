@@ -1,3 +1,5 @@
+'use client'
+
 import "./navbar.css"
 import { useRouter } from 'next/navigation';
 import logo from '../assets/logo.png'
