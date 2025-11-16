@@ -4,7 +4,6 @@ import ReviewSchema from "@/model/ReviewSchema";
 import ClientReview from "./ClientReview";
 
 export default async function PaginaReview(props) {
-    console.log("RAW PARAMS:", props);
     const params = await props.params;
 
     const { id } = params;
