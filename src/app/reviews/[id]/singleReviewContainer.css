@@ -60,7 +60,8 @@
 }
 
 .otherImages-img {
-    width: 300px;
+    max-width: 300px;
+    max-height: 15rem;
     border-radius: 5px;
     transition: 200ms;
     align-self: center;
@@ -76,10 +77,11 @@
 
 .otherImages-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     padding: 10px;
-    gap: 5%;
+    gap: 25px;
     margin-bottom: 2%;
+    align-content: center;
 }
 
 .otherImages-div  {
