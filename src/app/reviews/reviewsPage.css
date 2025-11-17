@@ -37,10 +37,12 @@
     align-items: center;
     min-height: 10vh;
     margin-top: 85px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .container-cards {
-    min-width: 1300px;
+    min-width: 40rem;
 }
 
 .titulo-reviews {
@@ -48,11 +50,13 @@
     font-size: 3rem;
     font-family: serif;
     margin-bottom: 1rem;
+    padding-left: 2rem;
+    align-self: baseline;
 }
 
 .filter-card-container {
     display: flex;
-    gap: 3rem;
+    gap: rem;
 }
 
 .filter-container {

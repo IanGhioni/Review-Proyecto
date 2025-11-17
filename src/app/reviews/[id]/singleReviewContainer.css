@@ -5,9 +5,11 @@
     justify-content: center;
     min-height: 10vh;
     color: aliceblue;
+    padding-top: 2cap;
 }
 .img-review {
-    height: 30rem;
+    max-width: 20vw;
+    height: min-content;
     border-radius: 10px;
     margin-left: 1%;
     margin-top: 1%;
@@ -25,12 +27,14 @@
 .container-review-contenido {
     display: flex;
     flex-direction: row;
-    justify-content: baseline;
+    justify-content: center;
+    align-self: baseline;
     margin: 5%;
     gap: 1%;
-    width: 90%;
+    min-width: 800px;
+    max-width: auto;
     border-radius: 20px;
-    padding-right: 2%;
+    padding-right: 1%;
     padding: 1%;
     background-image: url('../../../assets/review-page-background.png');
     box-shadow: 0px 0px 10px 1px rgb(255, 255, 255, 0.5);
@@ -60,7 +64,7 @@
 }
 
 .otherImages-img {
-    max-width: 300px;
+    max-width: auto;
     max-height: 15rem;
     border-radius: 5px;
     transition: 200ms;
