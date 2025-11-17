@@ -59,7 +59,7 @@ export default function Home() {
             <div>
             {reviews.length == 0 ? 
             <div className="page-container">
-                <div className="w-370 titulo-reviews">{emoji} Mis reviews</div>
+                <div className="titulo-reviews">{emoji} Mis reviews</div>
                 <div className="no-reviews">
                 <div className="filter-container">
                     <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
@@ -76,18 +76,18 @@ export default function Home() {
             </div>
             :
             <div className="page-container">
-                <div className="w-370 titulo-reviews">{emoji} Mis reviews</div>
+                <div className="titulo-reviews">{emoji} Mis reviews</div>
                 <div className="filter-card-container">
-                <div className="filter-container">
-                    <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
-                    <button className={`buttonFilter ${categoria === "Videojuego" ? "active" : ""}`} onClick={() => seleccionarCategoria("Videojuego")}>Videojuego</button>
-                    <button className={`buttonFilter ${categoria === "Película" ? "active" : ""}`} onClick={() => seleccionarCategoria("Película")}>Película</button>
-                    <button className={`buttonFilter ${categoria === "Serie" ? "active" : ""}`} onClick={() => seleccionarCategoria("Serie")}>Serie</button>
-                    <button className={`buttonFilter ${categoria === "Libro" ? "active" : ""}`} onClick={() => seleccionarCategoria("Libro")}>Libro</button>
-                    <button className={`buttonFilter ${categoria === "Manga" ? "active" : ""}`} onClick={() => seleccionarCategoria("Manga")}>Manga</button>
-                    <button className={`buttonFilter ${categoria === "Comic" ? "active" : ""}`} onClick={() => seleccionarCategoria("Comic")}>Comic</button>
-                    <button className={`buttonFilter ${categoria === "Álbum" ? "active" : ""}`} onClick={() => seleccionarCategoria("Álbum")}>Musica</button>
-                </div>
+                    <div className="filter-container">
+                        <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
+                        <button className={`buttonFilter ${categoria === "Videojuego" ? "active" : ""}`} onClick={() => seleccionarCategoria("Videojuego")}>Videojuego</button>
+                        <button className={`buttonFilter ${categoria === "Película" ? "active" : ""}`} onClick={() => seleccionarCategoria("Película")}>Película</button>
+                        <button className={`buttonFilter ${categoria === "Serie" ? "active" : ""}`} onClick={() => seleccionarCategoria("Serie")}>Serie</button>
+                        <button className={`buttonFilter ${categoria === "Libro" ? "active" : ""}`} onClick={() => seleccionarCategoria("Libro")}>Libro</button>
+                        <button className={`buttonFilter ${categoria === "Manga" ? "active" : ""}`} onClick={() => seleccionarCategoria("Manga")}>Manga</button>
+                        <button className={`buttonFilter ${categoria === "Comic" ? "active" : ""}`} onClick={() => seleccionarCategoria("Comic")}>Comic</button>
+                        <button className={`buttonFilter ${categoria === "Álbum" ? "active" : ""}`} onClick={() => seleccionarCategoria("Álbum")}>Musica</button>
+                    </div>
                 <Divider layout="vertical"/>
                 <div className="container-cards">
                     <ul>

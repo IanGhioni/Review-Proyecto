@@ -24,6 +24,11 @@
     font-family: 'Times New Roman', Times, serif;
     font-style: oblique;
     color: aliceblue;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .text {
