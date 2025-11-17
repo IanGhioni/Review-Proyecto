@@ -28,7 +28,6 @@ const Navbar = () => {
                 <div className="container-boton">
 
                 </div>
-                <div style={{color: 'white'}}>Buscador</div>
             </div>
         </div>
     )
@@ -39,4 +38,5 @@ export default Navbar;
                     <button className="button-navegar">
                     Mis blogs
                     </button>  
+                    <div style={{color: 'white'}}>Buscador</div>
 */
