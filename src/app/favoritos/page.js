@@ -34,31 +34,29 @@ export default function PaginaDeFavs() {
 
 
     return(
-        <div>
+        <div className="favs-container">
             <Navbar/>
             {cargando ? (
                 <div className="favs-container">
                     <p style={{color: 'white'}}>Cargandooooo</p>
                 </div>
             ) : (
-                <div className="favs-container">
+                <div >
                     <div className="container-fav-cards">
                         {reviews.map((r) => (
-                            <div key={r._id} className="flex items-center justify-center">
                             <div key={r._id} className="container-individual-card">
                                 <img className="imagen-fav-prueba" src={r.imageUrl}
                                     onClick={() => router.push(`/reviews/${r._id}`)}
                                 />
                                 <p className="texto-titulo" onClick={() => router.push(`/reviews/${r._id}`)}>{r.title}</p>
                                 <Rating 
+                                    className="star-rating-size"
                                     value={r.stars} 
                                     precision={0.5}
-                                    
                                     icon={<StarIcon fontSize="inherit" style={{ color: "#ffee00ff" }} />}
                                     emptyIcon={<StarBorderIcon fontSize="inherit" style={{ color: "#bbb" }}/>}
                                     readOnly
                                 />
-                            </div>
                             </div>
                         ))}
                     </div>

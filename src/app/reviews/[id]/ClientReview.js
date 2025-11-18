@@ -33,7 +33,6 @@ export default function ClientReview({ review }) {
                     }}
                     loading="lazy"
                     ></img>
-                    <Divider layout="vertical"/>
                     <div>
                         <h1 className="review-titulo">{review.title}</h1>
                         <div className="category-star-container">
