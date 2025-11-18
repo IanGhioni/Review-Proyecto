@@ -5,6 +5,7 @@
     justify-content: center;
     min-height: 10vh;
     color: aliceblue;
+    margin-top: 85px;
 }
 .img-review {
     max-width: 20vw;
@@ -29,6 +30,7 @@
     justify-content: center;
     align-self: baseline;
     margin: 5%;
+    margin-top: 1%;
     gap: 2%;
     min-width: 800px;
     max-width: auto;
@@ -89,10 +91,20 @@
 .otherImages-div  {
     margin-top: 2%;
 }
+.backArrow-review-page {
+    color: aliceblue;
+    align-self: baseline;
+    padding-left: 3.1rem;
+}
+
+.backArrow-review-page:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 @media (max-width: 1024px) {
     .single-review-page-container {
-        margin-top: 7vw;
+        margin-top: 4.5em;
     }
     .container-review-contenido {
         display: flex;
@@ -130,11 +142,14 @@
         margin-bottom: 2%;
         align-content: center;
     }
+    .backArrow-review-page {
+        padding-left: 1rem;
+    }
 }
 
 @media (max-width: 600px) {
     .single-review-page-container {
-        margin-top: 15vw;
+        margin-top: 4.5em;
     }
     .container-review-contenido {
         display: flex;
@@ -183,5 +198,8 @@
         align-items: center;
         justify-content: space-between;
         margin: 3%;
+    }
+    .backArrow-review-page {
+        padding-left: 1rem;
     }
 }

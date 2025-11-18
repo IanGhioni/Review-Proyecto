@@ -56,14 +56,25 @@
     box-shadow: 0px 0px 5px 3px rgb(216, 7, 7);
     cursor: pointer;
 }
-@media(max-width: 1200px) {
+
+.backArrow-favs{
+    color: aliceblue;
+    padding-left: 8%;
+    align-self: flex-start;
+}
+.backArrow-favs:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media(max-width: 1000px) {
     .favs-container {
         margin-top: 90px;
         width: auto;
         text-align: center;
     }
     .container-fav-cards {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto auto ;
         align-items: baseline;
         justify-content: space-between;
         padding-left: 5%;
@@ -110,9 +121,9 @@
     }
     .imagen-fav-prueba {
         margin-bottom: 3%;
-        height: 40vw;
+        height: 35vw;
     }
     .MuiRating-sizeMedium {
-        scale: 1;
+        scale: 0.6;
     }
 }

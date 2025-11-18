@@ -91,6 +91,16 @@
     box-shadow: 0px 0px 5px 5px rgb(255, 255, 255);
     cursor: auto;
 }
+.backArrow {
+    color: aliceblue;
+    align-self: baseline;
+    padding-left: 7rem;
+}
+
+.backArrow:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 @media (max-width: 1024px) {
     .page-container {
@@ -142,6 +152,10 @@
     }
     .container-cards {
         min-width: auto;
+    }
+    .backArrow {
+        align-self: flex-start;
+        padding-left: 0rem;
     }
 }
 
