@@ -61,9 +61,7 @@ export default function Home() {
             {reviews.length == 0 ? 
             <div className="page-container">
                 <p className="backArrow" onClick={() => router.back()}>← Volver</p>
-                <div className="div-titulo">
-                    <div className="titulo-reviews">{emoji} Mis reviews</div>
-                </div>
+                <div className="titulo-reviews">{emoji} Mis reviews</div>
                 <div className="no-reviews">
                     <div className="filter-container">
                         <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
