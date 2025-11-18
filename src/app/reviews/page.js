@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { Paginator } from "primereact/paginator";
-import { Divider } from 'primereact/divider';
 import CircularProgress from '@mui/material/CircularProgress';
 import ReviewCard from "@/components/ReviewCard";
 import "./paginator.css"
 import "./reviewsPage.css"
 import Navbar from "@/components/Navbar";
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
     const [rows, setRows] = useState(10);
     const [categoria, setCategoria] = useState(""); 
 
+    const router = useRouter()
 
     useEffect(() => {
         document.title = 'Mis reviews';
@@ -59,6 +60,7 @@ export default function Home() {
             <div>
             {reviews.length == 0 ? 
             <div className="page-container">
+                <p className="backArrow" onClick={() => router.back()}>← Volver</p>
                 <div className="div-titulo">
                     <div className="titulo-reviews">{emoji} Mis reviews</div>
                 </div>
@@ -78,6 +80,7 @@ export default function Home() {
             </div>
             :
             <div className="page-container">
+                <p className="backArrow" onClick={() => router.back()}>← Volver</p>
                 <div className="titulo-reviews">{emoji} Mis reviews</div>
                 <div className="filter-card-container">
                     <div className="filter-container">

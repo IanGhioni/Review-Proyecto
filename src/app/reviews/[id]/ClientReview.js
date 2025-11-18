@@ -9,11 +9,13 @@ import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Divider } from "primereact/divider";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useRouter } from "next/navigation";
 
 
 export default function ClientReview({ review }) {
     const [open, setOpen] = useState(false);
     const [fullImagen, setFullImagen] = useState('');
+    const router = useRouter()
 
     if (review.otherImages) {
         const array = review.otherImages.trim().split(/\s+/);
@@ -23,6 +25,7 @@ export default function ClientReview({ review }) {
         <div>
             <Navbar />
             <div className="single-review-page-container">
+                <p className="backArrow-review-page" onClick={() => router.back()}>← Volver</p>
                 <div className="container-review-contenido">
                     <img
                     className="img-review"

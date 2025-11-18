@@ -39,9 +39,16 @@ export default function PaginaDeFavs() {
             {cargando ? (
                 <div className="favs-container">
                     <p style={{color: 'white'}}>Cargandooooo</p>
+                    <p className="backArrow" onClick={() => router.back()}>← Volver</p>
                 </div>
             ) : (
-                <div >
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '10px'
+                }}>
+                    <p className="backArrow-favs" onClick={() => router.back()}>← Volver</p>
                     <div className="container-fav-cards">
                         {reviews.map((r) => (
                             <div key={r._id} className="container-individual-card">
