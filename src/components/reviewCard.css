@@ -9,7 +9,6 @@
     border-width: 1px;
     transition: 200ms;
     max-height: 13rem;
-    padding-right: 2%;
 }
 
 .container:hover {
@@ -44,7 +43,7 @@
 .img {
     margin: 12px;
     border-radius: 10px;
-    height: 160px;
+    max-height: 160px;
     align-self: center;
     margin-right: 1%;
 }
@@ -64,4 +63,45 @@
     font-style: italic;
     color: aliceblue;
     padding-right: 10px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: auto;
+    }
+    .img {
+        margin: 12px;
+        border-radius: 10px;
+        max-height: 100px;
+        align-self: center;
+        margin-right: 10px;
+    }
+
+    .text {
+        color: aliceblue;
+        margin-bottom: 1%;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        font-size: small;
+    }
+
+    .title {
+        font-size: large;
+        padding-top: 1%;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: oblique;
+        color: aliceblue;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+
+    .category {
+        font-size: 0.9rem;
+    }
 }

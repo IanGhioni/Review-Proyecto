@@ -5,7 +5,6 @@
     justify-content: center;
     min-height: 10vh;
     color: aliceblue;
-    padding-top: 2cap;
 }
 .img-review {
     max-width: 20vw;
@@ -30,11 +29,10 @@
     justify-content: center;
     align-self: baseline;
     margin: 5%;
-    gap: 1%;
+    gap: 2%;
     min-width: 800px;
     max-width: auto;
     border-radius: 20px;
-    padding-right: 1%;
     padding: 1%;
     background-image: url('../../../assets/review-page-background.png');
     box-shadow: 0px 0px 10px 1px rgb(255, 255, 255, 0.5);
@@ -90,4 +88,100 @@
 
 .otherImages-div  {
     margin-top: 2%;
+}
+
+@media (max-width: 1024px) {
+    .single-review-page-container {
+        margin-top: 7vw;
+    }
+    .container-review-contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 300px;
+        padding-left: 2%;
+    }
+    .review-titulo {
+        font-size: 1.8rem;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .texto-review {
+        white-space: pre-line;
+        font-size: 1rem;
+    }
+    .review-categoria {
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .category-star-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4%;
+        align-items: baseline;
+        margin-bottom: 1%;
+        margin-left: 5;
+    }
+    .otherImages-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        gap: 25px;
+        margin-bottom: 2%;
+        align-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .single-review-page-container {
+        margin-top: 15vw;
+    }
+    .container-review-contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 300px;
+        padding: 3%;
+    }
+    .review-titulo {
+        font-size: 1.8rem;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .texto-review {
+        white-space: pre-line;
+        font-size: 1rem;
+        margin-top: 5%;
+    }
+    .review-categoria {
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .img-review {
+        max-width: 60vw;
+        height: min-content;
+        margin: 0%;
+        margin: 10px;
+    }
+
+    .otherImages-img {
+        align-self: center;
+        justify-self: center;
+    }
+    .otherImages-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+        gap: 25px;
+        margin-bottom: 2%;
+        align-items: center;
+        justify-content: center;
+    }
+    .category-star-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 3%;
+    }
 }
