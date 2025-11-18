@@ -59,7 +59,9 @@ export default function Home() {
             <div>
             {reviews.length == 0 ? 
             <div className="page-container">
-                <div className="titulo-reviews">{emoji} Mis reviews</div>
+                <div className="div-titulo">
+                    <div className="titulo-reviews">{emoji} Mis reviews</div>
+                </div>
                 <div className="no-reviews">
                     <div className="filter-container">
                         <button className={`buttonFilter ${categoria === "" ? "active" : ""}`} onClick={() => seleccionarCategoria("")}>Todos</button>
