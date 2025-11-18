@@ -5,7 +5,6 @@
     justify-content: center;
     min-height: 10vh;
     color: aliceblue;
-    padding-top: 2cap;
 }
 .img-review {
     max-width: 20vw;
@@ -34,7 +33,6 @@
     min-width: 800px;
     max-width: auto;
     border-radius: 20px;
-    padding-right: 1%;
     padding: 1%;
     background-image: url('../../../assets/review-page-background.png');
     box-shadow: 0px 0px 10px 1px rgb(255, 255, 255, 0.5);
@@ -90,4 +88,70 @@
 
 .otherImages-div  {
     margin-top: 2%;
+}
+
+@media (max-width: 1024px) {
+    .single-review-page-container {
+        margin-top: 7vw;
+    }
+    .container-review-contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 300px;
+        padding-left: 2%;
+    }
+    .review-titulo {
+        font-size: 1.8rem;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .texto-review {
+        white-space: pre-line;
+        font-size: 1rem;
+    }
+    .review-categoria {
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .category-star-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4%;
+        align-items: baseline;
+        margin-bottom: 1%;
+        margin-left: 5;
+    }
+}
+
+@media (max-width: 600px) {
+    .single-review-page-container {
+        margin-top: 15vw;
+    }
+    .container-review-contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 300px;
+    }
+    .review-titulo {
+        font-size: 1.8rem;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .texto-review {
+        white-space: pre-line;
+        font-size: 1rem;
+        margin-top: 5%;
+    }
+    .review-categoria {
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .img-review {
+        max-width: 60vw;
+        height: min-content;
+        margin: 0%;
+        margin: 10px;
+    }
 }
