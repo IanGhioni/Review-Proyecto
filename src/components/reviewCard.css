@@ -64,6 +64,9 @@
     color: aliceblue;
     padding-right: 10px;
 }
+.MuiRating-sizeMedium {
+    scale: 0.8;
+}
 
 @media (max-width: 600px) {
     .container {
