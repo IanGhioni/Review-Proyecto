@@ -14,7 +14,7 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
     "mongoose": "^8.19.3",
-    "next": "16.0.1",
+    "next": "16.0.10",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.7",
     "react": "19.2.0",
