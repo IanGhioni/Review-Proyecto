@@ -67,7 +67,7 @@
     cursor: pointer;
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 900px) {
     .favs-container {
         margin-top: 90px;
         width: auto;
@@ -79,6 +79,7 @@
         justify-content: space-between;
         padding-left: 5%;
         padding-right: 5%;
+        gap: 1rem
     }
     .container-individual-card {
         width: 20vw;
@@ -105,6 +106,7 @@
     .container-fav-cards {
         grid-template-columns: auto auto;
         align-items: baseline;
+        gap: 0.5rem;
     }
     .container-individual-card {
         width: 38vw;
