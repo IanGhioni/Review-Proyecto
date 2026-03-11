@@ -1,0 +1,21 @@
+.loading-overlay {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+
+    color: white;
+    font-size: 2rem;
+
+    z-index: 9999;
+    pointer-events: all;
+}
