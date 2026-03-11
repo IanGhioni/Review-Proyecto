@@ -7,7 +7,7 @@ import { Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import "./paginaFavoritos.css"
-import Cargando from "@/components/cargando";
+import Cargando from "@/components/LoadingOverlay";
 
 export default function PaginaDeFavs() {
     const [reviews, setReviews] = useState([]);

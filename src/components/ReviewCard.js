@@ -4,7 +4,7 @@ import { Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { useState } from "react";
-import Cargando from "./cargando";
+import Cargando from "./LoadingOverlay";
 
 const ReviewCard = ({review}) => {
     const router = useRouter()

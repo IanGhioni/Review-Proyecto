@@ -6,7 +6,7 @@ import ReviewCard from "@/components/ReviewCard";
 import { useRouter } from 'next/navigation';
 import "./homePageStyle.css"
 import CircularProgress from '@mui/material/CircularProgress';
-import Cargando from "@/components/cargando";
+import Cargando from "@/components/LoadingOverlay";
 
 export default function Home() {
   const [reviews, setReviews] = useState([]);
