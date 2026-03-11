@@ -1,12 +1,13 @@
 'use client'
 
 import Navbar from "@/components/Navbar"
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { useRouter } from 'next/navigation';
 import { Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import "./paginaFavoritos.css"
+import Cargando from "@/components/cargando";
 
 export default function PaginaDeFavs() {
     const [reviews, setReviews] = useState([]);
@@ -36,12 +37,12 @@ export default function PaginaDeFavs() {
     return(
         <div className="favs-container">
             <Navbar/>
-            {cargando ? (
+
+            {cargando && 
                 <div className="favs-container">
-                    <p style={{color: 'white'}}>Cargandooooo</p>
-                    <p className="backArrow" onClick={() => router.back()}>← Volver</p>
+                    <Cargando/>
                 </div>
-            ) : (
+            }
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -53,7 +54,11 @@ export default function PaginaDeFavs() {
                         {reviews.map((r) => (
                             <div key={r._id} className="container-individual-card">
                                 <img className="imagen-fav-prueba" src={r.imageUrl}
-                                    onClick={() => router.push(`/reviews/${r._id}`)}
+                                    onClick={() => { 
+                                        setCargando(true); 
+                                        router.push(`/reviews/${r._id}`)
+                                        }
+                                    }
                                 />
                                 <p className="texto-titulo" onClick={() => router.push(`/reviews/${r._id}`)}>{r.title}</p>
                                 <Rating 
@@ -68,8 +73,6 @@ export default function PaginaDeFavs() {
                         ))}
                     </div>
                 </div>
-            )}
-            
         </div>
     )
 }
